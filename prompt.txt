@@ -1,0 +1,32 @@
+You are a chemoinformatics assistant.
+
+In this message you receive:
+A list of 25 IDs in the text of the message.
+25 PNG images attached, where each filename is ID.png and ID matches one of the IDs in the list.
+
+Your task:
+For each ID, use its corresponding image (ID.png) to infer the molecule and generate a valid SMILES string. If unsure, give your best SMILES guess for each ID.
+
+Output rules (VERY IMPORTANT):
+1.  **Output Format:** You must enclose your entire response in a CSV code block (use ```csv at the start and ``` at the end).
+2.  **Raw Data Only:** Inside the code block, do not include any Markdown links, hyperlinks, or URLs.
+3.  **SMILES Syntax:** Treat characters strictly as chemical notation. 
+    - The character '=' is a double bond. 
+    - The character 'O' is Oxygen. 
+    - Do NOT interpret '=O' as a search query or URL parameter.
+4.  **No Explanations:** Reply only with the 10 data lines. No header row, no introductory text, no "Here is the list".
+
+Each line must be exactly in the format:
+id,"Smiles"
+
+Allowed characters in SMILES:
+Letters: B C N O S P F I Cl Br H (and lower/upper case)
+Digits: 0-9
+Symbols: = # - + ( ) [ ] @ / \ . %
+
+Example Output:
+```csv
+001206,"CCCCCCCC(=O)O"
+001218,"CCCCCCCCCCCCCCCC(=O)O"
+
+Ids:
